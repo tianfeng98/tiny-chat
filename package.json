@@ -1,0 +1,36 @@
+{
+  "name": "tiny-chat",
+  "version": "1.0.0",
+  "description": "A core logic for the development of chat components, adaptable to multiple endpoints. 一个用于对话组件开发的核心逻辑，适配多端。",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tianfeng98/tiny-chat"
+  },
+  "authors": [
+    "linktodream@163.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "father": "^4.5.1-beta.4"
+  },
+  "dependencies": {
+    "deepmerge-ts": "^7.1.0"
+  }
+}
