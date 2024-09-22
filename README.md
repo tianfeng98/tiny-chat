@@ -274,15 +274,15 @@ interface DriverConfig {
 
 修改消息
 
-### `chatSession.sendMessage(content: string): Promise<ChatMessage>`
+### `chatSession.sendMessage(content: string): Promise<ChatMessage | null>`
 
 用户发送消息
 
-### `chatSession.receiveAssistantMessage(content: string): Promise<ChatMessage>`
+### `chatSession.receiveAssistantMessage(content: string): Promise<ChatMessage | null>`
 
 收到助手消息
 
-### `chatSession.receiveMessage(content: string, role: string): Promise<ChatMessage>`
+### `chatSession.receiveMessage(content: string, role: string): Promise<ChatMessage | null>`
 
 收到消息
 
