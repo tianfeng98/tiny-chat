@@ -1,7 +1,7 @@
 # tiny-chat
 
-[![NPM version](https://img.shields.io/npm/v/tiny-chat.svg?style=flat)](https://npmjs.com/package/tiny-chat)
-[![NPM downloads](http://img.shields.io/npm/dm/tiny-chat.svg?style=flat)](https://npmjs.com/package/tiny-chat)
+[![NPM version](https://img.shields.io/npm/v/tiny-chat-core.svg?style=flat)](https://npmjs.com/package/tiny-chat-core)
+[![NPM downloads](http://img.shields.io/npm/dm/tiny-chat-core.svg?style=flat)](https://npmjs.com/package/tiny-chat-core)
 
 <div align="center">
 
