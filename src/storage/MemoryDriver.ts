@@ -33,9 +33,9 @@ export default class MemoryDriver implements ChatStorageDriver {
   async addChatSession(dto: AddChatSessionDto) {
     const id = createSessionId();
     this.sessionMap.set(id, {
+      ...dto,
       id,
       createAt: Date.now(),
-      ...dto,
     });
     return id;
   }
@@ -73,9 +73,9 @@ export default class MemoryDriver implements ChatStorageDriver {
   async addChatMessage(dto: AddChatMessageDto) {
     const id = createMessageId();
     this.messageMap.set(id, {
+      ...dto,
       id,
       createAt: Date.now(),
-      ...dto,
     });
     return id;
   }

@@ -24,7 +24,7 @@ export interface TinyChatOptions {
   };
 }
 
-export default class TinyChat extends EventEmitter {
+export class TinyChat extends EventEmitter {
   private sessionMap: Map<string, ChatSession> = new Map();
   private chatStorage = new ChatStorage();
   private sortDirection: Required<TinyChatOptions>["sortDirection"] = {};
@@ -203,7 +203,7 @@ export default class TinyChat extends EventEmitter {
   /**
    * 载入指定会话中的消息
    */
-  async loadChatMessagess(
+  async loadChatMessages(
     sessionId: string,
     pageParams: ChatPagination,
     otherParams?: any
@@ -215,3 +215,5 @@ export default class TinyChat extends EventEmitter {
     return [];
   }
 }
+
+export default TinyChat;

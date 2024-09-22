@@ -195,20 +195,18 @@ export default class ChatSession implements ChatSessionDto {
     return [];
   }
 
-  private async addMessage(message: ChatMessage) {
-    this.addTempMessage(message);
-    this.onMessagesChange();
-    const msgId = await this.chatStorage.addChatMessage(message);
+  private async addMessage({ id: _, ...messageDto }: ChatMessage) {
+    const msgId = await this.chatStorage.addChatMessage(messageDto);
     if (msgId) {
-      this.updateTempMessage(message.id, {
-        id: msgId,
-      });
+      const message: ChatMessage = { ...messageDto, id: msgId };
+      this.addTempMessage(message);
+      this.onMessagesChange();
       this.latestMessageId = msgId;
       this.updateSession();
       this.onMessagesChange();
       return message;
     }
-    return message;
+    return null;
   }
 
   /**
