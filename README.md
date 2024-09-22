@@ -14,19 +14,19 @@
 ## Install
 
 ```bash
-$ npm install tiny-chat
+$ npm install tiny-chat-core
 ```
 
 or
 
 ```bash
-$ pnpm add tiny-chat
+$ pnpm add tiny-chat-core
 ```
 
 ## Usage
 
 ```typescript
-import TinyChat from "tiny-chat";
+import TinyChat from "tiny-chat-core";
 
 const tinyChat = new TinyChat({
   sortDirection: {
