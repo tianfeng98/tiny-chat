@@ -131,11 +131,14 @@ export default class ChatSession implements ChatSessionDto {
    * @returns
    */
   getMessages(sortDirection: "ascend" | "descend" = this.sortDirection) {
-    const messages = Array.from(this.messagesMap.values()).sort((a, b) =>
-      sortDirection === "descend"
-        ? b.createAt - a.createAt
-        : a.createAt - b.createAt
-    );
+    const messages = Array.from(this.messagesMap.values())
+      .sort((a, b) =>
+        sortDirection === "descend"
+          ? b.createAt - a.createAt
+          : a.createAt - b.createAt
+      )
+      // 浅拷贝一次，防止修改
+      .map((d) => ({ ...d } as ChatMessage));
     this.latestMessageId = messages.at(
       sortDirection === "descend" ? 0 : -1
     )?.id;
