@@ -69,7 +69,7 @@ export interface ChatMessage {
 
 export type AddChatMessageDto = Pick<
   ChatMessage,
-  "content" | "parentId" | "creator" | "role" | "extra" | "sessionId"
+  "id" | "content" | "parentId" | "creator" | "role" | "extra" | "sessionId"
 >;
 
 export type UpdateChatMessageDto = {

@@ -32,7 +32,7 @@ export interface ChatStorageDriver {
     pageParams: ChatPagination,
     otherParams?: any
   ) => Promise<ChatMessage[] | undefined>;
-  addChatMessage: (dto: AddChatMessageDto) => Promise<string | undefined>;
+  addChatMessage: (dto: AddChatMessageDto) => Promise<boolean>;
   updateChatMessage: (dto: UpdateChatMessageDto) => Promise<boolean>;
   deleteChatMessage: (id: string) => Promise<boolean>;
 }
