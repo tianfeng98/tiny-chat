@@ -1,4 +1,3 @@
-import type { ChatStorageDriver } from "./interface";
 import type {
   AddChatMessageDto,
   AddChatSessionDto,
@@ -8,7 +7,8 @@ import type {
   UpdateChatMessageDto,
   UpdateChatSessionDto,
 } from "../interface";
-import { createSessionId, createMessageId } from "../utils";
+import { createSessionId } from "../utils";
+import type { ChatStorageDriver } from "./interface";
 
 export default class MemoryDriver implements ChatStorageDriver {
   name: string;
@@ -71,13 +71,11 @@ export default class MemoryDriver implements ChatStorageDriver {
     return messages.slice((current - 1) * pageSize, current * pageSize);
   }
   async addChatMessage(dto: AddChatMessageDto) {
-    const id = createMessageId();
-    this.messageMap.set(id, {
+    this.messageMap.set(dto.id, {
       ...dto,
-      id,
       createAt: Date.now(),
     });
-    return id;
+    return true;
   }
   async updateChatMessage(dto: UpdateChatMessageDto) {
     const message = this.messageMap.get(dto.id);
