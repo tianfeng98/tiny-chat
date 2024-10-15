@@ -22,6 +22,12 @@ export const uid = (length: number, specials: string = "") => {
   return val;
 };
 
+/**
+ * 仅用于内存存储
+ */
 export const createSessionId = () => `session-${uid(36)}`;
 
+/**
+ * @TODO 该id会作为消息的唯一标识，需要确保其唯一性，应异步获取。
+ */
 export const createMessageId = () => `message-${uid(36)}`;
