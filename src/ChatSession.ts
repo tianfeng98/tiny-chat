@@ -136,7 +136,9 @@ export default class ChatSession implements ChatSessionDto {
         ? b.createAt - a.createAt
         : a.createAt - b.createAt
     );
-    this.latestMessageId = messages.at(-1)?.id;
+    this.latestMessageId = messages.at(
+      sortDirection === "descend" ? 0 : -1
+    )?.id;
     return messages;
   }
 
